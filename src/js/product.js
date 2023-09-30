@@ -1,5 +1,6 @@
-import { getLocalStorage, setLocalStorage } from "./utils.mjs";
+import { getLocalStorage, setLocalStorage, getParam } from "./utils.mjs";
 import { findProductById } from "./productData.mjs";
+import productDetails from "./productDetails.mjs";
 
 function addProductToCart(product) {
   if (!getLocalStorage("so-cart")) {
@@ -14,6 +15,12 @@ async function addToCartHandler(e) {
   const product = await findProductById(e.target.dataset.id);
   addProductToCart(product);
 }
+
+const prodID = getParam('product');
+productDetails(prodID);
+
+console.log(findProductById(prodID));
+
 
 // add listener to Add to Cart button
 document
