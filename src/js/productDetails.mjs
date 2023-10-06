@@ -1,12 +1,37 @@
-import { addToCart } from "./product.js";
+import { getLocalStorage, setLocalStorage } from "./utils.mjs"
+import { findProductById } from "./productData.mjs";
 
-export default function productDetails(productId){
-   return null;
-}
+ let product = {};
 
-function renderProductDetails()
-{
+export default async function productDetails(productId){
+   // use findProductById to get the details for the current product. findProductById will return a promise! use await or .then() to process it
+  product = await findProductById(productId);
+//   console.table(product);
+   // once we have the product details we can render out the HTML
+   renderProductDetails();
+  // add a listener to Add to Cart button
+  document.getElementById("addToCart").addEventListener("click", addToCart);
+};
 
-}
+function addToCart() {
+   if (!getLocalStorage("so-cart")) {
+     setLocalStorage("so-cart", []);
+   }
+   let cartProduct = getLocalStorage("so-cart");
+   cartProduct.push(product);
+   setLocalStorage("so-cart", cartProduct);
+ };
 
-const productData = '';
+
+function renderProductDetails() {
+   document.getElementById("productName").innerText = product.Brand.Name;
+   document.getElementById("noBrandName").innerText = product.NameWithoutBrand;
+   document.getElementById("productImg").src = product.Image;
+   document.getElementById("productPrice").innerText = product.FinalPrice;
+   document.getElementById("productColor").innerText = product.Colors[0].ColorName;
+   document.getElementById("shortDescription").innerHTML = product.DescriptionHtmlSimple;
+   document.getElementById("addToCart").dataset.id = product.Id;
+};
+
+
+
