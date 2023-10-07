@@ -1,4 +1,5 @@
 import { getData } from "./productData.mjs";
+import { renderListWithTemplate } from "./utils.mjs";
 
 export default async function productList(selector, category = "tents") {
 // get the element we will insert the list into from the selector
@@ -7,7 +8,7 @@ export default async function productList(selector, category = "tents") {
  const products = await getData();
 //  console.log(products);
 // render out the product list to the element
-    renderProducts(products, sel);
+    renderListWithTemplate(createCard, sel, products);
 };
 
 function renderProducts(products, selector) {
@@ -28,4 +29,3 @@ function createCard(product){
       </li>`
 };
 
-productList(".product-list", "tents");

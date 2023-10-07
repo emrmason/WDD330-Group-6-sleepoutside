@@ -30,7 +30,12 @@ export function getParam(param) {
   return parameter;
 }
 
-export function renderListWithTemplate(templateFn, parentElement, list,
-                                       position = 'afterbegin', clear = true) {
-                                        
+export function renderListWithTemplate(
+  templateFn, parentElement, list,
+  position = 'afterbegin', clear = true) {
+    if(clear) {
+      parentElement.innerHTML = "";
+    }
+    const card = list.map(templateFn);
+    parentElement.insertAdjacentHTML(position, card.join(""));                                  
 }
