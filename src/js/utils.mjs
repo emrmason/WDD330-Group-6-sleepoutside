@@ -29,3 +29,8 @@ export function getParam(param) {
   const parameter = urlParams.get(param);
   return parameter;
 }
+
+export function renderListWithTemplate(templateFn, parentElement, list,
+                                       position = 'afterbegin', clear = true) {
+                                        
+}
