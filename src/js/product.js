@@ -7,7 +7,5 @@ productDetails(prodID);
 // console.log(findProductById(prodID));
 
 function animateBackpack() {
-    let icon = document.getElementById("backpack");
-    
-  }
-  
+  let icon = document.getElementById("backpack");
+}
