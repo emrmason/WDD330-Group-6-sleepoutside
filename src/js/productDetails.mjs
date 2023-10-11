@@ -32,16 +32,16 @@ function renderProductDetails() {
    document.getElementById("shortDescription").innerHTML = product.DescriptionHtmlSimple;
    document.getElementById("addToCart").dataset.id = product.Id;
 };
-function successRender(result) {
-  console.log("Successful render of Product Details.");
-  document.getElementById("addToCart").style.display = "block";
-}
-function failRender(result) {
-  console.log("Error, products not rendered.");
-  document.getElementById("productName").insertAdjacentHTML("afterbegin", "Error: Product not found.");
-  document.getElementById("addToCart").style.display = "none";
-}
+// function successRender(result) {
+//   console.log("Successful render of Product Details.");
+//   document.getElementById("addToCart").style.display = "block";
+// }
+// function failRender(result) {
+//   console.log("Error, products not rendered.");
+//   document.getElementById("productName").insertAdjacentHTML("afterbegin", "Error: Product not found.");
+//   document.getElementById("addToCart").style.display = "none";
+// }
 
-productDetails(renderProductDetails).then(successRender, failRender);
+// productDetails(renderProductDetails).then(successRender, failRender);
 
 
