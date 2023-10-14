@@ -1,4 +1,4 @@
-import { getParam } from "./utils.mjs";
+import { getParam, loadHeaderFooter } from "./utils.mjs";
 import productDetails from "./productDetails.mjs";
 
 const prodID = getParam("product");
@@ -14,3 +14,6 @@ button.addEventListener("click", () => {
     icon.removeAttribute("class", "shake");
   }, 350);
 });
+}
+
+loadHeaderFooter();
