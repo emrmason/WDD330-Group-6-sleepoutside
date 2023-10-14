@@ -14,6 +14,5 @@ button.addEventListener("click", () => {
     icon.removeAttribute("class", "shake");
   }, 350);
 });
-}
 
 loadHeaderFooter();
