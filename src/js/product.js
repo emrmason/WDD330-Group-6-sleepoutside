@@ -1,4 +1,4 @@
-import { getParam } from "./utils.mjs";
+import { getParam, loadHeaderFooter } from "./utils.mjs";
 import productDetails from "./productDetails.mjs";
 
 const prodID = getParam("product");
@@ -9,3 +9,5 @@ productDetails(prodID);
 function animateBackpack() {
   let icon = document.getElementById("backpack");
 }
+
+loadHeaderFooter();
