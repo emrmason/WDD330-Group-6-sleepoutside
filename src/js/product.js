@@ -6,6 +6,11 @@ productDetails(prodID);
 
 // console.log(findProductById(prodID));
 
-function animateBackpack() {
+let button = document.getElementById("addToCart");
+button.addEventListener("click", () => {
   let icon = document.getElementById("backpack");
-}
+  icon.setAttribute("class", "shake");
+  setTimeout(() => {
+    icon.removeAttribute("class", "shake");
+  }, 350);
+});
