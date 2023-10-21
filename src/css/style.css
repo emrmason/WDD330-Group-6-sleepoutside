@@ -170,6 +170,21 @@ button {
   width: 100%;
 }
 
+/* Icon grid*/
+.icon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  list-style-type: none;
+  padding: 0;
+  margin: 2em 1em;
+  text-align: center;
+  column-gap: 15px;
+}
+
+.icon-grid img {
+  min-height: 78px;
+}
+
 /* Start cart list card styles */
 .cart-card {
   display: grid;
