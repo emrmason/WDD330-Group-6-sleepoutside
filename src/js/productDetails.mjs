@@ -37,6 +37,7 @@ function renderProductDetails() {
    document.getElementById("shortDescription").innerHTML = product.DescriptionHtmlSimple;
    document.getElementById("addToCart").dataset.id = product.Id;
 };
+
 function successRender(result) {
   console.log("Successful render of Product Details.");
   renderProductDetails(product)
@@ -49,3 +50,4 @@ function failRender(result) {
   document.getElementById("productName").insertAdjacentHTML("afterbegin", "Error: Product not found.");
   document.getElementById("addToCart").style.display = "none";
 }
+
