@@ -1,8 +1,11 @@
 import { getData } from "./productData.mjs";
-import { renderListWithTemplate } from "./utils.mjs";
+import { renderListWithTemplate, getParam } from "./utils.mjs";
 
-export default async function productList(selector, category = "tents") {
+
+export default async function productList(selector, category) {
 // get the element we will insert the list into from the selector
+ category= getParam("category");
+
  let sel = document.querySelector(selector);
 // get the list of products
  const products = await getData(category);
