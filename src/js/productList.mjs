@@ -5,7 +5,7 @@ export default async function productList(selector, category = "tents") {
 // get the element we will insert the list into from the selector
  let sel = document.querySelector(selector);
 // get the list of products
- const products = await getData();
+ const products = await getData(category);
 //  console.log(products);
 // render out the product list to the element
     renderListWithTemplate(createCard, sel, products);
