@@ -43,15 +43,17 @@ function renderProductDetails() {
 };
 
 function successRender(result) {
-  console.log("Successful render of Product Details.");
-  renderProductDetails(product)
-  document.getElementById("addToCart").style.display = "block";
-  document.getElementById("addToCart").addEventListener("click", addToCart());
+  if(result) {
+    // console.log("Successful render");
+    renderProductDetails(product);
+    document.getElementById("addToCart").style.display = "block";
+    document.getElementByID("addToCart").addEventListener("click", addToCart); //Add to Cart Button still not working for me. ??
+  } else {  
+    // console.log("Error, products not rendered.");
+    document.getElementById("productName").insertAdjacentHTML("afterbegin", "Error: Product not found.");
+    document.getElementById("addToCart").style.display = "none";
+  }
 
 }
-function failRender(result) {
-  console.log("Error, products not rendered.");
-  document.getElementById("productName").insertAdjacentHTML("afterbegin", "Error: Product not found.");
-  document.getElementById("addToCart").style.display = "none";
-}
+
 
