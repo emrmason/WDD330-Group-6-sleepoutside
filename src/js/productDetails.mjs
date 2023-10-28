@@ -14,7 +14,7 @@ export default async function productDetails(productId){
   }
    // Potential code based on the above promise... 
    // once we have the product details we can render out the HTML
-  //  renderProductDetails(); 
+  renderProductDetails; 
 
 };
 

@@ -27,9 +27,9 @@ function cartItemTemplate(item) {
 
 renderCartContents();
 
-function displayTotal(renderCartContents) {
+function displayTotal(getLocalStorage) {
   let total = 0;
-  
+  // USE local storage to iterate through items in the cart!
   if(cartItems.length != 0){
     for(i = 0; i < cartItems.length; i++) {
       total += item.FinalPrice;
