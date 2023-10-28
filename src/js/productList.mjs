@@ -1,4 +1,4 @@
-import { getData } from "./productData.mjs";
+import { getData } from "./externalServices.mjs";
 import { renderListWithTemplate, getParam } from "./utils.mjs";
 
 
