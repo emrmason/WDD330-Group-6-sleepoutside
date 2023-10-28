@@ -137,6 +137,13 @@ button {
   text-decoration: none;
   color: var(--dark-grey);
 }
+
+.cart-footer {
+  display: none;
+  margin: 1em;
+  align-content: right;
+}
+
 /* Styles for product lists */
 .product-card {
   flex: 1 1 45%;

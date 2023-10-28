@@ -10,7 +10,7 @@ function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
-      src="${item.Image}"
+      src="${item.Images.PrimaryLarge}"
       alt="${item.Name}"
     />
   </a>
@@ -26,5 +26,20 @@ function cartItemTemplate(item) {
 }
 
 renderCartContents();
+
+// function displayTotal(renderCartContents) {
+//   let total = 0;
+
+//   if(cartItems.length != 0){
+//     for(i = 0; i < cartItems.length; i++) {
+//       total += item.FinalPrice;
+//       return total
+//     }
+//     document.getElementByClassName(".cart-footer").style.display = "block";
+//     document.querySelector(".cart-total").innerHTML= `Total Cost: ${total}`;
+//   } else {
+//     return
+//   }
+// }
 
 loadHeaderFooter();
