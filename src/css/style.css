@@ -232,6 +232,34 @@ button {
   display: none;
 }
 
+/*Checkout form*/
+#checkout {
+  max-width: 500px;
+  margin: 1em;
+}
+
+#checkout fieldset {
+  margin: 1em 0;
+}
+
+#checkout label {
+  display: block;
+  margin: 1em 0;
+}
+
+#checkout ul {
+  padding: 0;
+}
+
+#checkout li {
+  list-style-type: none;
+}
+
+#checkout input {
+  width: 100%;
+  min-height: 44px;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
