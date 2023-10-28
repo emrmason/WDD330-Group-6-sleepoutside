@@ -9,38 +9,56 @@
     <title>Sleep Outside | Checkout</title>
 
     <link rel="stylesheet" href="/css/style.css" />
-    
-    <script src="../js/checkout.js" type="module"></script>
 
+    <script src="../js/checkout.js" type="module"></script>
   </head>
 
   <body>
-    <header class="divider" id="main-header">
-    </header>
+    <header class="divider" id="main-header"></header>
 
     <main class="divider">
       <section class="products">
         <h2>Review & Place your Order</h2>
 
-        <form id="checkout-form">
+        <form id="checkout">
           <fieldset>
-              <legend>Shipping</legend>
-              <label class="shipping">First Name <input type="text" name="fname" id="fname" required></label>
-              <label class="shipping">Last Name <input type="text" name="lname" id="lname" required></label>
-              <label class="shipping">Street <input type="text" name="street" id="street" required></label>
-              <label class="shipping">City <input type="text" name="city" id="city" required></label>
-              <label class="shipping">State <input type="text" name="state" id="state" required></label>
-              <label class="shipping">Zip <input type="text" name="zip" id="zip" required></label>
+            <legend>Shipping</legend>
+            <label class="shipping"
+              >First Name <input type="text" name="fname" id="fname" required
+            /></label>
+            <label class="shipping"
+              >Last Name <input type="text" name="lname" id="lname" required
+            /></label>
+            <label class="shipping"
+              >Street <input type="text" name="street" id="street" required
+            /></label>
+            <label class="shipping"
+              >City <input type="text" name="city" id="city" required
+            /></label>
+            <label class="shipping"
+              >State <input type="text" name="state" id="state" required
+            /></label>
+            <label class="shipping"
+              >Zip <input type="text" name="zip" id="zip" required
+            /></label>
           </fieldset>
 
           <fieldset>
             <legend>Payment</legend>
-            <label class="payment">Card Number <input type="text" name="fname" id="fname" required></label>
-            <label class="payment">Expiration <input type="text" name="lname" id="lname" required></label>
-            <label class="payment">Street <input type="text" name="street" id="street" required></label>
+            <label class="payment"
+              >Card Number
+              <input type="text" name="cardNumber" id="cardNumber" required
+            /></label>
+            <label class="payment"
+              >Expiration
+              <input type="text" name="expiration" id="expiration" required
+            /></label>
+            <label class="payment"
+              >Security Code <input type="text" name="code" id="code" required
+            /></label>
           </fieldset>
 
-          <fieldset>
+          <fieldset class="checkout-summary">
             <legend>Order Summary</legend>
             <ul>
               <li>
@@ -49,21 +67,21 @@
               </li>
               <li>
                 <label for="shipping">Shipping Estimate</label>
-                <p id="shipping"></p>
+                <p name="shipping" id="shipping"></p>
               </li>
               <li>
                 <label for="tax">Tax</label>
-                <p id="tax"></p>
+                <p name="tax" id="tax"></p>
               </li>
               <li>
                 <label for="orderTotal"><b>Order Total</b></label>
-                <p id="orderTotal"></p>
+                <p name="orderTotal" id="orderTotal"></p>
               </li>
             </ul>
           </fieldset>
 
-          <button>Checkout</button>
-          </form>
+          <button id="checkoutSubmit" type="submit">Checkout</button>
+        </form>
       </section>
     </main>
 

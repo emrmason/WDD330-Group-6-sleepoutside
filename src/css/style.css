@@ -233,29 +233,29 @@ button {
 }
 
 /*Checkout form*/
-#checkout-form {
+#checkout {
   max-width: 500px;
   margin: 1em;
 }
 
-#checkout-form fieldset {
+#checkout fieldset {
   margin: 1em 0;
 }
 
-#checkout-form label {
+#checkout label {
   display: block;
   margin: 1em 0;
 }
 
-#checkout-form ul {
+#checkout ul {
   padding: 0;
 }
 
-#checkout-form li {
+#checkout li {
   list-style-type: none;
 }
 
-#checkout-form input {
+#checkout input {
   width: 100%;
   min-height: 44px;
 }
