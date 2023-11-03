@@ -14,6 +14,7 @@ export default async function productDetails(productId){
   // }
   //  // Potential code based on the above promise... 
   //  // once we have the product details we can render out the HTML
+  // adding an inconspicuous new comment to see if this works...
    renderProductDetails();
    console.log(renderProductDetails);
    document.getElementById("addToCart").addEventListener("click", addToCart);
