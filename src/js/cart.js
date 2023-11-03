@@ -30,14 +30,14 @@ renderCartContents();
 function displayTotal(getLocalStorage) {
   let total = 0;
   const cartItems = getLocalStorage("so-cart");  // I have questions about this part- do I need to map out the items, to be able to access the FinalPrice?
-  if(cartItems != 0) {
-    for(i = 0; i < cartItems.length; i++) {
-      total += item.FinalPrice;
-      return total
-    }
+  // if(cartItems != 0) {
+  //   for(i = 0; i < cartItems.length; i++) {
+  //     total += item.FinalPrice;
+  //     return total
+  //   }
     document.getElementByClassName(".cart-footer").style.display = "block";
     document.querySelector(".cart-total").innerHTML= `Total Cost: ${total}`;
   }
-}
+
 
 loadHeaderFooter();

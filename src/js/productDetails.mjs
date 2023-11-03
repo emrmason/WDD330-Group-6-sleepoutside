@@ -4,29 +4,21 @@ import { findProductById } from "./externalServices.mjs";
  let product = {};
 
 export default async function productDetails(productId){
-   // use findProductById to get the details for the current product. findProductById will return a promise (product will = the promise)! use await or .then() to process it
   product = await findProductById(productId)
-  // if(product) {
-  //   successRender(product);
-  //   //document.getElementById("addToCart").addEventListener("click", addToCart());
-  // } else {
-  //   failRender(product);
-  // }
-  //  // Potential code based on the above promise... 
-  //  // once we have the product details we can render out the HTML
-  // adding an inconspicuous new comment to see if this works...
+  if(product) {
+    successRender(product);
+  }
    renderProductDetails();
-   console.log(renderProductDetails);
    document.getElementById("addToCart").addEventListener("click", addToCart);
 
 };
 
 function addToCart() {
-   if (!getLocalStorage("so-cart")) {
+   if (!getLocalStorage("so-cart")) { // why is this throwing an error? What argument should be here? 11.3.23
      setLocalStorage("so-cart", []);
    }
    let cartProduct = getLocalStorage("so-cart");
-   cartProduct.push(product); // error: cartProduct.push is not a function...
+   cartProduct.push(product);
    setLocalStorage("so-cart", cartProduct);
  };
 
@@ -36,7 +28,7 @@ function renderProductDetails() {
    document.getElementById("noBrandName").innerText = product.NameWithoutBrand;
    document.getElementById("productImg").src = product.Images.PrimaryLarge;
    document.getElementById("productImg").alt = product.Name;
-   document.getElementById("productPrice").innerText = product.FinalPrice;
+   document.getElementById("productPrice").innerText = "$" + product.FinalPrice;
    document.getElementById("productColor").innerText = product.Colors[0].ColorName;
    document.getElementById("shortDescription").innerHTML = product.DescriptionHtmlSimple;
    document.getElementById("addToCart").dataset.id = product.Id;
@@ -44,12 +36,11 @@ function renderProductDetails() {
 
 function successRender(result) {
   if(result) {
-    // console.log("Successful render");
+    console.log("Successful render");
     renderProductDetails(product);
     document.getElementById("addToCart").style.display = "block";
-    document.getElementByID("addToCart").addEventListener("click", addToCart); //Add to Cart Button still not working for me. ??
   } else {  
-    // console.log("Error, products not rendered.");
+    console.log("Error, products not rendered.");
     document.getElementById("productName").insertAdjacentHTML("afterbegin", "Error: Product not found.");
     document.getElementById("addToCart").style.display = "none";
   }

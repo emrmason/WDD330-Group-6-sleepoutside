@@ -7,7 +7,8 @@ export function qs(selector, parent = document) {
 
 // retrieve data from localstorage
 export function getLocalStorage(key) {
-  return JSON.parse(localStorage.getItem(key));
+  return JSON.parse(localStorage.getItem(key));// what are the keys for Local Storage? 
+  // Am I not passing the correct argument into the product details function?
 }
 // save data to local storage
 export function setLocalStorage(key, data) {
