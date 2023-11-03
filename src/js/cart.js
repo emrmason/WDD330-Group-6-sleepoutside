@@ -27,12 +27,12 @@ function cartItemTemplate(item) {
 
 renderCartContents();
 
-// function displayTotal(renderCartContents) {
+// function displayTotal() {
 //   let total = 0;
-
-//   if(cartItems.length != 0){
-//     for(i = 0; i < cartItems.length; i++) {
-//       total += item.FinalPrice;
+//   const items = getLocalStorage("so-cart");
+//   if(items.length != 0){
+//     for(i = 0; i < items.length; i++) {
+//       total += items.FinalPrice;
 //       return total
 //     }
 //     document.getElementByClassName(".cart-footer").style.display = "block";
