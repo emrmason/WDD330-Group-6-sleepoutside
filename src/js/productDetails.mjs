@@ -9,8 +9,7 @@ export default async function productDetails(productId){
     successRender(product);
   }
    renderProductDetails();
-   document.getElementById("addToCart").addEventListener("click", addToCart);
-
+   document.getElementById("addToCart").addEventListener("click", product, addToCart);
 };
 
 function addToCart() {

@@ -138,11 +138,11 @@ button {
   color: var(--dark-grey);
 }
 
-.cart-footer {
+/* .cart-footer {
   display: none;
   margin: 1em;
   align-content: right;
-}
+} */
 
 /* Styles for product lists */
 .product-card {
@@ -229,8 +229,11 @@ button {
 }
 .cart-footer {
   grid-row: 1;
+  margin: 1em;
+  align-content: right;
   display: none;
 }
+
 
 /*Checkout form*/
 #checkout {
