@@ -71,3 +71,30 @@ export function loadHeaderFooter() {
   renderWithTemplate(headerHTML, header);
   renderWithTemplate(footerHTML, footer);
 }
+
+export function alertMessage(message, scroll=true) {
+  const alert  = document.createElement("div");
+  alert.classList.add("alert");
+
+  const text = document.createElement("p");
+  text.innerHTML = `Invalid ${message}`;
+  const remove = document.createElement("span");
+  remove.innerHTML = "X";
+
+  alert.appendChild(text);
+  alert.appendChild(remove);
+
+  alert.addEventListener('click', (e)=>{
+  if(e.target.tagName == "span"){
+    main.removeChild(this);
+  }
+  });
+
+  const main = document.querySelector("main");
+  main.prepend(alert);
+  if(scroll){
+    window.scrollTo(0,0);
+  }
+
+
+}

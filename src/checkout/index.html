@@ -20,7 +20,7 @@
       <section class="products">
         <h2>Review & Place your Order</h2>
 
-        <form id="checkout">
+        <form name="checkout" id="checkout">
           <fieldset>
             <legend>Shipping</legend>
             <label class="shipping"
@@ -46,15 +46,31 @@
           <fieldset>
             <legend>Payment</legend>
             <label class="payment"
-              >Card Number
-              <input type="text" name="cardNumber" id="cardNumber" required
+              >Card Number (16-digit)
+              <input
+                type="text"
+                name="cardNumber"
+                id="cardNumber"
+                pattern="^[0-9]{16}$"
+                required
             /></label>
             <label class="payment"
-              >Expiration
-              <input type="text" name="expiration" id="expiration" required
+              >Expiration (mm/yy)
+              <input
+                type="text"
+                name="expiration"
+                id="expiration"
+                pattern="^(?:0[1-9]|1[0-2])\/(\d{2})$"
+                required
             /></label>
             <label class="payment"
-              >Security Code <input type="text" name="code" id="code" required
+              >Security Code
+              <input
+                type="text"
+                name="code"
+                id="code"
+                pattern="^[0-9]{3}$"
+                required
             /></label>
           </fieldset>
 
@@ -62,7 +78,9 @@
             <legend>Order Summary</legend>
             <ul>
               <li>
-                <label for="cartTotal">Item Subtotal(<span id="num-items"></span>)</label>
+                <label for="cartTotal"
+                  >Item Subtotal(<span id="num-items"></span>)</label
+                >
                 <p name="cartTotal" id="cartTotal"></p>
               </li>
               <li>

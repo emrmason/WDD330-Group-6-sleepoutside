@@ -1,4 +1,4 @@
-import { getLocalStorage } from "./utils.mjs";
+import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 
 function packageItems(items) {
     const simplify = items.map((item)=> {
@@ -73,9 +73,15 @@ const checkoutProcess = {
         json.items = packageItems(this.list);
         console.log(json);
         try {
+            setLocalStorage('so-cart', []);
+            location.assign("/checkout/success.html");
             const res = await this.checkout(json);
             console.log(res);
         } catch (err) {
+            // removeAllAlerts();
+            for(let message in err.message) {
+                alertMessage(err.message[message]);
+            }
             console.log(err);
         }
     },
