@@ -16,7 +16,10 @@ export default defineConfig({
         product3: resolve(__dirname, "src/product_pages/index.html"),
         product4: resolve(__dirname, "src/product_pages/index.html"),
         product_list: resolve(__dirname, "src/product-list/index.html"),
+        login: resolve(__dirname, "src/login/index.html"),
+        orders: resolve(__dirname, "src/orders/index.html"),
       },
+      external: ["src/js/auth.mjs"],
     },
   },
 });
