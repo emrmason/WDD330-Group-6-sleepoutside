@@ -1,18 +1,25 @@
-//  will be responsible for sending the credentials to the authentication 
-// server and if that comes back successful it will store the authentication 
-// token that is sent back into local storage. 
-// Then we will redirect the user to whatever page they were trying to access when they were asked to login.
-function login(creds, redirect){
-    return
-}
+import { loginRequest } from "./externalServices.mjs";
+import { alertMessage, getLocalStorage, setLocalStorage } from "./utils.mjs";
+import jwt_decode from "jwt-decode";
 
+const tokenKey = "so-token";
 
-//is responsible to check to see if the user is already logged in. 
-// How will we do that? We will check to see if there is a valid token stored 
-// in localStorage. If there is no token, or if the token is expired we should redirect 
-// the user to the login page...making sure to keep track of the page they were trying to access 
-// so we can send them back after the login!
-function checkLogin(){
+export async function login(creds, redirect = "/"){
+    try {
+        const token = await loginRequest(creds);
+        setLocalStorage(tokenKey, token);
+        window.location = redirect;
+    } catch (err) {
+        alertMessage(err.message.message);
+    }
+};
+
+function checkLogin(tokenKey){
+    if(tokenKey) {
+        jwt_decode();
+        const date = new Date();
+        
+    }
     return
 }
 
