@@ -1,6 +1,6 @@
 import { loginRequest } from "./externalServices.mjs";
-import { alertMessage, getLocalStorage, setLocalStorage } from "./utils.mjs";
-import jwt_decode from "jwt-decode";
+import { getLocalStorage, setLocalStorage } from "./utils.mjs";
+import * as jwt_decode from "jwt-decode";
 
 const tokenKey = "so-token";
 
@@ -27,11 +27,6 @@ export function checkLogin(){
        return token; 
     }
 }
-
-// is responsible for checking an existing token to make sure it is not expired. 
-// It should return a true or false, true if the token is still valid (unexpired), false if it is expired.
-
-// How do we know if the token is expired? 
 
 function isTokenValid(token){
     if(token) {

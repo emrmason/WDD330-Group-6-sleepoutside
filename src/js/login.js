@@ -1,5 +1,6 @@
 import { loadHeaderFooter, getParam } from "./utils.mjs";
-import { login } from "auth.mjs";
+import { loginRequest }from "./externalServices.mjs";
+import * as auth from "./auth.mjs"
 
 loadHeaderFooter();
 

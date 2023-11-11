@@ -1,7 +1,7 @@
-// Placeholder for code
-// Need to redirect to login as soon as page loads
 import { loadHeaderFooter } from "./utils.mjs";
 import { checkLogin } from "./auth.mjs";
+import { currentOrders } from "./currentOrders.mjs";
 
 loadHeaderFooter();
-checkLogin();
+const token = checkLogin();
+currentOrders("#orders", token);

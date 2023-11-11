@@ -19,6 +19,7 @@ export default defineConfig({
         login: resolve(__dirname, "src/login/index.html"),
         orders: resolve(__dirname, "src/orders/index.html"),
       },
+      external: ["src/js/auth.mjs"],
     },
   },
 });
